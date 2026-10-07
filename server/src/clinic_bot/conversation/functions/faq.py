@@ -23,7 +23,13 @@ def _health_topics_allowed(question: str, ctx: HandlerContext) -> bool:
 
 
 class FaqArgs(BaseModel):
-    question: str = Field(description="The patient's question, in English")
+    question: str = Field(
+        description=(
+            "The patient's question as one complete English question, keeping their meaning "
+            "and adding no new topic. Expand short messages: 'timing' becomes 'What are the "
+            "clinic timings?', 'parking' becomes 'Is there parking at the clinic?'"
+        )
+    )
 
 
 @llm_function(

@@ -10,9 +10,9 @@ City Care Clinic, 2nd Floor, 14 Demo Main Road, Indiranagar, Bangalore 560038. T
 
 Two-wheeler parking is available in the building basement. Car parking is limited to 6 spaces on a first-come basis. Paid public parking is available on 100 Feet Road.
 
-# Opening hours
+# Timing
 
-The clinic is open Monday to Saturday, 9:00 AM to 1:00 PM and 4:00 PM to 8:30 PM. The clinic is closed on Sundays and on announced holidays. Each doctor has their own consulting days and hours; ask me about a specific doctor to see their schedule.
+Clinic timing and opening hours: The clinic is open Monday to Saturday, 9:00 AM to 1:00 PM and 4:00 PM to 8:30 PM. The clinic is closed on Sundays and on announced holidays. Each doctor has their own consulting days and hours; ask me about a specific doctor to see their schedule.
 
 # Contact
 

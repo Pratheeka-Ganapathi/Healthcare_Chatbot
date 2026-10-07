@@ -274,7 +274,7 @@ All behaviour that may change between the free demo and a paid deployment is env
 
 | Function | Behaviour |
 |---|---|
-| `answer_faq(question)` | RAG (§7) or the doctor directory for doctor/fee questions (fees included only when the question is about cost); node unchanged. Prompt: answer, then restate where the flow was ("Shall we continue with the 6:15 slot with Dr. Rao?") |
+| `answer_faq(question)` | `question` is the patient's message rewritten by the LLM as one complete question ("timing" becomes "What are the clinic timings?"), because one-word messages score below the RAG cut-off. RAG (§7) or the doctor directory for doctor/fee questions (fees included only when the question is about cost); node unchanged. Prompt: answer, then restate where the flow was ("Shall we continue with the 6:15 slot with Dr. Rao?") |
 | `request_human(reason)` | Creates a callback ticket, transition to `handoff` |
 
 ### 4.2 Flow state
