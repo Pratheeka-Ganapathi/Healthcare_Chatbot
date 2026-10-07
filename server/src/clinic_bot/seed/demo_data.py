@@ -124,7 +124,7 @@ PATIENTS: tuple[PatientSeed, ...] = (
 
 
 def demo_patients() -> list[dict[str, str]]:
-    """The three test patients shown in the widget's "Try it" panel."""
+    """The three test patients served by GET /config/demo (also listed in the README)."""
     shown = [p for p in PATIENTS if p.demo_note]
     return [
         {

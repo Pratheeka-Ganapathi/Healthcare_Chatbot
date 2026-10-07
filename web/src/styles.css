@@ -117,49 +117,6 @@ input {
   color: var(--muted);
 }
 
-.try-it {
-  margin-top: 8px;
-  font-size: 0.9rem;
-}
-
-.try-it summary {
-  cursor: pointer;
-  color: var(--scrub);
-  font-weight: 700;
-}
-
-.try-it ul {
-  list-style: none;
-  margin: 8px 0 0;
-  padding: 0;
-  display: grid;
-  gap: 8px;
-}
-
-.try-it li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 12px;
-  background: var(--surface);
-  border-radius: 10px;
-}
-
-.try-it li div {
-  display: grid;
-}
-
-.try-note,
-.try-creds {
-  font-size: 0.82rem;
-  color: var(--muted);
-}
-
-.try-creds {
-  font-variant-numeric: tabular-nums;
-}
-
 /* Emergency */
 
 /* Conversation */

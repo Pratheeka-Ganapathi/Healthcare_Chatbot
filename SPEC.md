@@ -78,7 +78,7 @@ This is the single source of truth for the design. `CLAUDE.md` is a short index 
                                     └─────────────┘ └──────────────┘ └─────────────────┘
 ```
 
-Also on the FastAPI app: `WS /stt` (voice input, §10.1; no LLM, no database), `GET /healthz` (widget pings it on load to wake the Render instance), `GET /config/demo` (test patient credentials for the widget's "Try it" panel), and the staff portal's JSON API under `/staff` (§17.5), used by the separate `admin/` app.
+Also on the FastAPI app: `WS /stt` (voice input, §10.1; no LLM, no database), `GET /healthz` (widget pings it on load to wake the Render instance), `GET /config/demo` (the three demo patients' phone and DOB; the widget no longer shows them, the README lists them), and the staff portal's JSON API under `/staff` (§17.5), used by the separate `admin/` app.
 
 ### 2.1 Repo layout
 
@@ -197,6 +197,8 @@ clinic-bot/
       red_flags.holdout.jsonl      # 20, written after
       run_red_flag_eval.py
       measure_latency.py           # latency budgets (§16.7)
+      tune_rag_threshold.py        # RAG cut-offs per embedding model (§7), on rag_threshold.jsonl
+      results.md                   # full red-flag run; results.layer1.md from CI (§12)
     tests/
       fakes/                       # InMemory*Repo, ScriptedLLMService, FakeStructuredLLM, fake STT
       unit/                        # domain + services against fakes
@@ -569,7 +571,7 @@ On startup `Seeder.ensure_seeded()` creates missing tables and fills the databas
 - 2 patients with past appointments; one active follow-up grant with Dr. Rao.
 - One booked appointment at now + 60 min (cutoff demo).
 - One patient already at 2 upcoming appointments (cap demo is one booking away).
-- `/config/demo` exposes 3 test patients' phone + DOB for the widget.
+- `/config/demo` exposes 3 test patients' phone + DOB (also listed in the README).
 
 ### 9.2 Chat summaries
 
@@ -580,7 +582,7 @@ When the WebSocket closes, `ChatSession` hands the transcript record to `ChatSum
 ## 10. Widget (React + Vite, Vercel)
 
 - `@pipecat-ai/client-js` + `client-react` with WebSocket transport. Text sent via RTVI send-text. Pings `/healthz` on load and shows "Waking up the demo server..." until it answers (Render cold start). If it never answers or the connection fails, an error line with a "try again" link replaces it.
-- Header notice: "Demo with synthetic data. Do not enter real health information." Collapsible "Try it" panel with test patients from `/config/demo`.
+- Header notice: "Demo with synthetic data. Do not enter real health information." Test patients are listed in the README, not in the widget.
 - Renders streamed bot text, typing indicator, markdown stripped.
 - UI payloads arrive as RTVI server messages. They are queued and rendered after the bot text of the same turn finishes, so cards never appear before the sentence that introduces them. If no bot text arrives within 1.2 s, the queued blocks render anyway.
 - When a newer bot message arrives, all earlier interactive blocks disable. Interactive blocks and the message box are also disabled while the chat is not ready.

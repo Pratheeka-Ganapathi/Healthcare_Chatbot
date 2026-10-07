@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef, useState } from "react";
 
 import { Bubble, TypingIndicator } from "./components/Bubble";
-import { DemoNotice, TryItPanel } from "./components/DemoNotice";
+import { DemoNotice } from "./components/DemoNotice";
 import { MicButton } from "./components/MicButton";
 import { VolumeControl } from "./components/VolumeControl";
 import { API_URL, WS_URL } from "./config";
@@ -133,7 +133,6 @@ export function App() {
           <VolumeControl speaker={speaker} />
         </div>
         <DemoNotice />
-        <TryItPanel onUse={setDraft} />
       </header>
 
       <main className="conversation" aria-live="polite">

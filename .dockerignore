@@ -3,8 +3,6 @@
 **/.mypy_cache
 **/.ruff_cache
 **/.pytest_cache
-server/.data
-server/.index
 server/.cache
 server/.env
 web

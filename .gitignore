@@ -4,12 +4,10 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 .pytest_cache/
-*.db
-*.db-wal
-*.db-shm
-server/.index/
 server/.cache/
-server/.data/
 web/node_modules/
 web/dist/
 .env
+web/*.tsbuildinfo
+.env.*
+!.env.example

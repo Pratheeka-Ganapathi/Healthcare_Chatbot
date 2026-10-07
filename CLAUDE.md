@@ -64,7 +64,7 @@ Update this list if a command changes.
 - Every medication question is refused with the fixed message. No drug info, no exceptions.
 - On an emergency or self-harm red flag, the soft note with 108/112 (or Tele-MANAS 14416) always shows, and the chat carries on (SPEC §6.3, §6.4).
 - Patient-facing fixed text lives in `data/messages.en.json`. No literal patient strings in Python.
-- Provider names and model ids only in `config.py` and `adapters/llm/`.
+- Provider names and model ids only in `config.py`, `adapters/llm/` and `adapters/embeddings/`.
 - Replies: English, 2 to 3 short sentences, no markdown, never mention ids, function names or error codes.
 - The bot never claims to send an SMS or WhatsApp message.
 - Spoken input is never sent automatically: `/stt` only returns a transcript to the message box, and the patient sends it like typed text. `/stt` never reaches the LLM or the database, and transcripts are never logged.
