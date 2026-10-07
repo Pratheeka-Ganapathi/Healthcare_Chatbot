@@ -22,6 +22,13 @@ services:
         sync: false
       - key: GOOGLE_API_KEY
         sync: false
+      # Hosted embeddings: the local fastembed model needs more than the free plan's 512 MB.
+      - key: EMBED_BACKEND
+        value: gemini
+      - key: EMBED_MODEL
+        value: gemini-embedding-001
+      - key: EMBED_API_KEY  # optional; leave empty to use GOOGLE_API_KEY
+        sync: false
       - key: ALLOWED_ORIGINS
         sync: false
       - key: STAFF_ORIGINS

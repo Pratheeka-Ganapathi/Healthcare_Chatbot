@@ -245,6 +245,7 @@ All behaviour that may change between the free demo and a paid deployment is env
 | `GOOGLE_API_KEY` / `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` | | Only the active ones are required |
 | `EMBED_BACKEND` | `fastembed` | `fastembed` \| `openai` \| `gemini`; the index stamp records backend + model, so a change rebuilds it |
 | `EMBED_MODEL` | `sentence-transformers/all-MiniLM-L6-v2` | e.g. `gemini-embedding-001` with `gemini` |
+| `EMBED_API_KEY` | | Optional key for hosted embeddings; falls back to the provider key (`GOOGLE_API_KEY` or `OPENAI_API_KEY`). A key from another Google account gives embeddings their own quota |
 | `FAQ_THRESHOLD` / `CHECKLIST_THRESHOLD` | per backend (§7) | Override the RAG cut-offs; leave unset to use the measured defaults |
 | `CLINIC_NOW` | unset | ISO datetime with +05:30; freezes the clock |
 | `CLASSIFIER_TIMEOUT_S` | 4 | Timeout → regex verdict stands |

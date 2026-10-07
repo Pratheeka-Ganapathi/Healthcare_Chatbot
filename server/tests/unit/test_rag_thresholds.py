@@ -54,6 +54,14 @@ def test_env_overrides_the_model_default() -> None:
     assert (s.faq_cutoff, s.checklist_cutoff) == (0.7, 0.5)
 
 
+def test_embeddings_use_their_own_key_when_set() -> None:
+    shared = _settings(embed_backend="gemini", google_api_key="chat-key", embed_api_key=None)
+    assert shared.embedding_key() == "chat-key"
+    own = _settings(embed_backend="gemini", google_api_key="chat-key", embed_api_key="embed-key")
+    assert own.embedding_key() == "embed-key"
+    assert own.api_key("google") == "chat-key"
+
+
 async def test_faq_uses_its_cutoff() -> None:
     def faq(threshold: float) -> FaqService:
         store = OneHitStore(0.5, "Two-wheeler parking is in the basement.")

@@ -95,7 +95,7 @@ def configure_logging(level: str) -> None:
 def build_embedder(settings: Settings) -> Embedder:
     if settings.embed_backend == "fastembed":
         return FastEmbedEmbedder(settings.embed_model)
-    return LiteLLMEmbedder(settings.embed_backend, settings.embed_model, settings.embed_api_key())
+    return LiteLLMEmbedder(settings.embed_backend, settings.embed_model, settings.embedding_key())
 
 
 async def _vector_index(

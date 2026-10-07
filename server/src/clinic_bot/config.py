@@ -71,6 +71,7 @@ class Settings(BaseSettings):
 
     embed_backend: Literal["fastembed", "openai", "gemini"] = "fastembed"
     embed_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+    embed_api_key: str | None = None  # own key (own quota) for hosted embeddings
     faq_threshold: float | None = None  # override DEFAULT_RAG_THRESHOLDS[embed_backend]
     checklist_threshold: float | None = None
 
@@ -146,8 +147,10 @@ class Settings(BaseSettings):
             raise RuntimeError(f"Missing API key for provider '{provider}'")
         return key
 
-    def embed_api_key(self) -> str:
-        """Hosted embedding backends reuse the matching LLM provider's key."""
+    def embedding_key(self) -> str:
+        """``EMBED_API_KEY`` if set, else the matching LLM provider's key."""
+        if self.embed_api_key:
+            return self.embed_api_key
         provider: Provider = "google" if self.embed_backend == "gemini" else "openai"
         return self.api_key(provider)
 
