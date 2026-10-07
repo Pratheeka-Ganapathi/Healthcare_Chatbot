@@ -1,0 +1,20 @@
+{"text": "My father just collapsed in the hall and he is not responding when I shake him. Please send someone fast", "label": "emergency", "category": "direct"}
+{"text": "I think I am having a heart attack, my chest is crushing and my left arm has gone numb", "label": "emergency", "category": "direct"}
+{"text": "my tongue and lips are puffing up after I ate the prawn curry and my voice has gone all squeaky, it feels like the throat is closing", "label": "emergency", "category": "paraphrase"}
+{"text": "mouth has gone droopy on one side and I cannot lift my right hand, the words are coming out all jumbled since 20 minutes", "label": "emergency", "category": "paraphrase"}
+{"text": "I cut my hand with the cutter and the blood is just soaking through the towel, it won't stop even after pressing for 15 minutes", "label": "emergency", "category": "paraphrase"}
+{"text": "I had a bit of chest tightness yesterday but it is nothing like a heart problem, I am fine now and just want to book an ECG for next week", "label": "not", "category": "negation"}
+{"text": "No fainting, no breathlessness, no bleeding. Just a mild headache since morning. Can I see a doctor today?", "label": "not", "category": "negation"}
+{"text": "Last year I had a seizure once while travelling and was admitted for two days. I am completely fine now, need a neurologist follow up appointment", "label": "not", "category": "historical"}
+{"text": "My mother had a minor stroke three years ago and recovered fully. Does your clinic do BP and sugar monitoring packages for seniors?", "label": "not", "category": "historical"}
+{"text": "my husband is lying on the floor and his whole body is jerking, eyes rolled up, he is not answering me", "label": "emergency", "category": "third_party"}
+{"text": "my 3 year old just swallowed a handful of tablets from my mother's pill box and is getting very drowsy, what do I do", "label": "emergency", "category": "third_party"}
+{"text": "Doctor, amma ko saans nahi aa rahi, hothon ka rang neela ho gaya hai aur woh bol nahi paa rahi. Jaldi bhejiye", "label": "emergency", "category": "code_mixed"}
+{"text": "nange ede novu thumba ide, ghama ghama anta byarsthide, usiru kattuthide. yaaradru bega banni", "label": "emergency", "category": "code_mixed"}
+{"text": "kal raat se halka bukhar hai aur gala kharab hai, kya aaj shaam ko Dr. Rao available hain?", "label": "not", "category": "code_mixed"}
+{"text": "I don't want to live anymore. I have been thinking about ending it all tonight", "label": "self_harm", "category": "self_harm"}
+{"text": "everyone would be better off without me, I keep thinking of taking all my sleeping pills at once", "label": "self_harm", "category": "self_harm"}
+{"text": "I have had loose motions two times since morning and a bit of stomach cramps. Should I take ORS or come in?", "label": "not", "category": "non_emergency"}
+{"text": "there is a dull pain in my lower back since two days, gets worse when I sit long at work. Which doctor should I see", "label": "not", "category": "non_emergency"}
+{"text": "What are your OPD timings on Sundays and is parking available near the Indiranagar clinic?", "label": "not", "category": "faq"}
+{"text": "Do you accept Star Health insurance for cashless consultation, and how much is the fee for a general physician visit?", "label": "not", "category": "faq"}

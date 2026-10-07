@@ -1,0 +1,108 @@
+[project]
+name = "clinic-bot"
+version = "0.1.0"
+description = "City Care Clinic front desk chatbot (Pipecat Flows, text v1)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "pipecat-ai[google,openai,anthropic,websocket]==1.12.0",
+    "fastapi==0.142.2",
+    "uvicorn[standard]==0.54.0",
+    "sqlalchemy[asyncio]==2.1.3",
+    "pydantic==2.13.5",
+    "pydantic-settings==2.15.0",
+    "structlog==26.1.0",
+    "rapidfuzz==3.14.6",
+    "dateparser==1.4.3",
+    "fastembed==0.8.1",
+    "litellm==1.104.0",
+    "httpx==0.28.1",
+    "asyncpg==0.31.0",
+    "pgvector==0.5.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "pytest-asyncio==1.4.0",
+    "mypy==2.4.0",
+    "ruff==0.16.10",
+    "import-linter==2.15",
+    "types-python-dateutil==2.9.0.20260807",
+]
+
+[project.scripts]
+clinic-reseed = "clinic_bot.cli:reseed"
+clinic-build-index = "clinic_bot.cli:build_index"
+clinic-prewarm-embedder = "clinic_bot.cli:prewarm_embedder"
+clinic-prewarm-health = "clinic_bot.cli:prewarm_health"
+clinic-create-admin = "clinic_bot.cli:create_admin"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/clinic_bot"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "eval"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "RUF", "ASYNC", "PLC", "PLE", "PLW"]
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.mypy]
+python_version = "3.12"
+mypy_path = "src"
+packages = [
+    "clinic_bot.domain",
+    "clinic_bot.ports",
+    "clinic_bot.services",
+    "clinic_bot.conversation",
+]
+strict = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = ["dateparser.*", "rapidfuzz.*", "pipecat.*", "pipecat_flows.*", "litellm.*", "fastembed.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.importlinter]
+root_package = "clinic_bot"
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "Layered architecture"
+type = "layers"
+layers = [
+  "clinic_bot.api",
+  "clinic_bot.pipeline",
+  "clinic_bot.conversation",
+  "clinic_bot.services",
+  "clinic_bot.ports",
+  "clinic_bot.domain",
+]
+
+[[tool.importlinter.contracts]]
+name = "Core is framework-free"
+type = "forbidden"
+source_modules = ["clinic_bot.domain", "clinic_bot.ports", "clinic_bot.services"]
+forbidden_modules = ["pipecat", "sqlalchemy", "fastapi", "pgvector",
+                     "fastembed", "litellm", "httpx", "clinic_bot.adapters"]
+
+[[tool.importlinter.contracts]]
+name = "Only the container wires adapters"
+type = "forbidden"
+source_modules = ["clinic_bot.api", "clinic_bot.pipeline", "clinic_bot.conversation"]
+forbidden_modules = ["clinic_bot.adapters"]
+# The app factory builds the composition root; that one edge is the only way in.
+ignore_imports = ["clinic_bot.api.app -> clinic_bot.container"]

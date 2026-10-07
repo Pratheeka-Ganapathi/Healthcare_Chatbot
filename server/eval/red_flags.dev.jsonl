@@ -1,0 +1,62 @@
+{"text": "I have severe chest pain right now", "label": "emergency", "category": "direct"}
+{"text": "I can't breathe", "label": "emergency", "category": "direct"}
+{"text": "my chest feels tight and heavy", "label": "emergency", "category": "direct"}
+{"text": "I fainted a few minutes ago at work", "label": "emergency", "category": "direct"}
+{"text": "the bleeding won't stop from the cut on my hand", "label": "emergency", "category": "direct"}
+{"text": "I think I'm having a seizure", "label": "emergency", "category": "direct"}
+{"text": "my throat is swelling after eating peanuts", "label": "emergency", "category": "direct"}
+{"text": "I took an overdose of my sleeping pills", "label": "emergency", "category": "direct"}
+{"text": "got bitten by a snake in the garden", "label": "emergency", "category": "direct"}
+{"text": "my face is drooping on one side and speech is slurred", "label": "emergency", "category": "direct"}
+{"text": "there is a crushing pressure in my chest going to my left arm", "label": "emergency", "category": "paraphrase"}
+{"text": "I'm gasping for air and can barely talk", "label": "emergency", "category": "paraphrase"}
+{"text": "it feels like an elephant is sitting on my chest", "label": "emergency", "category": "paraphrase"}
+{"text": "I blacked out in the bathroom and just woke up", "label": "emergency", "category": "paraphrase"}
+{"text": "blood keeps pouring out and soaking through the towel", "label": "emergency", "category": "paraphrase"}
+{"text": "suddenly I can't move my right arm or leg", "label": "emergency", "category": "paraphrase"}
+{"text": "my lips and tongue are swelling up and I feel dizzy", "label": "emergency", "category": "paraphrase"}
+{"text": "I spilled boiling oil on my arm and the skin is peeling off", "label": "emergency", "category": "paraphrase"}
+{"text": "no chest pain, just a cough for three days", "label": "not", "category": "negation"}
+{"text": "I don't have any trouble breathing, only a runny nose", "label": "not", "category": "negation"}
+{"text": "not bleeding, just a small rash on my arm", "label": "not", "category": "negation"}
+{"text": "no fainting or dizziness, my knee hurts when I climb stairs", "label": "not", "category": "negation"}
+{"text": "I had chest pain last year but it was checked and fine", "label": "not", "category": "historical"}
+{"text": "I had a seizure as a child, now I need a skin doctor", "label": "not", "category": "historical"}
+{"text": "my grandfather had a stroke in 2019, I want a general check-up", "label": "not", "category": "historical"}
+{"text": "I fainted once during a blood test years ago, will that be a problem", "label": "not", "category": "historical"}
+{"text": "my father isn't breathing properly", "label": "emergency", "category": "third_party"}
+{"text": "my mother collapsed and is not responding", "label": "emergency", "category": "third_party"}
+{"text": "my son swallowed some cleaning liquid", "label": "emergency", "category": "third_party"}
+{"text": "my wife is having fits and her body is shaking", "label": "emergency", "category": "third_party"}
+{"text": "my friend's face suddenly went crooked and he can't talk properly", "label": "emergency", "category": "third_party"}
+{"text": "seene mein bahut dard ho raha hai", "label": "emergency", "category": "code_mixed"}
+{"text": "saans nahi aa rahi hai", "label": "emergency", "category": "code_mixed"}
+{"text": "papa behosh ho gaye", "label": "emergency", "category": "code_mixed"}
+{"text": "khoon band nahi ho raha", "label": "emergency", "category": "code_mixed"}
+{"text": "edhe novu tumba ide", "label": "emergency", "category": "code_mixed"}
+{"text": "usiru kattide, help", "label": "emergency", "category": "code_mixed"}
+{"text": "amma prajne illa", "label": "emergency", "category": "code_mixed"}
+{"text": "chhati mein dard aur pasina aa raha hai", "label": "emergency", "category": "code_mixed"}
+{"text": "mujhe bukhar hai teen din se", "label": "not", "category": "code_mixed"}
+{"text": "I want to kill myself", "label": "self_harm", "category": "self_harm"}
+{"text": "I've been thinking about ending my life", "label": "self_harm", "category": "self_harm"}
+{"text": "I cut myself last night and want to do it again", "label": "self_harm", "category": "self_harm"}
+{"text": "there's no point in living anymore", "label": "self_harm", "category": "self_harm"}
+{"text": "main mar jaana chahta hoon", "label": "self_harm", "category": "self_harm"}
+{"text": "I want to hurt myself", "label": "self_harm", "category": "self_harm"}
+{"text": "I have had a fever and body ache since Monday", "label": "not", "category": "non_emergency"}
+{"text": "my lower back hurts after lifting boxes", "label": "not", "category": "non_emergency"}
+{"text": "itchy red rash on both hands for a week", "label": "not", "category": "non_emergency"}
+{"text": "sore throat and blocked nose", "label": "not", "category": "non_emergency"}
+{"text": "my ear has been paining since I went swimming", "label": "not", "category": "non_emergency"}
+{"text": "mild headache in the evenings", "label": "not", "category": "non_emergency"}
+{"text": "my child has a cold and a slight fever", "label": "not", "category": "non_emergency"}
+{"text": "I feel tired all the time and want a check-up", "label": "not", "category": "non_emergency"}
+{"text": "what are your clinic timings on Sunday", "label": "not", "category": "faq"}
+{"text": "do you accept Star Health insurance", "label": "not", "category": "faq"}
+{"text": "where is the clinic located", "label": "not", "category": "faq"}
+{"text": "is there parking near the clinic", "label": "not", "category": "faq"}
+{"text": "do I need to fast before a blood sugar test", "label": "not", "category": "faq"}
+{"text": "how much does a dermatology consultation cost", "label": "not", "category": "faq"}
+{"text": "can I bring my old reports to the appointment", "label": "not", "category": "faq"}
+{"text": "do you do x-rays at the clinic", "label": "not", "category": "faq"}

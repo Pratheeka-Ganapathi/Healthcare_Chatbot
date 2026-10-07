@@ -1,0 +1,64 @@
+# Local: PostgreSQL on :5432, backend on :8000, widget on :5173, staff portal on :5174.
+# Database only (run the backend and widget yourself): docker compose up -d db
+services:
+  db:
+    image: pgvector/pgvector:pg18  # PostgreSQL 18 with the pgvector extension (RAG index)
+    environment:
+      POSTGRES_USER: clinic
+      POSTGRES_PASSWORD: clinic
+      POSTGRES_DB: clinic
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgvector_data:/var/lib/postgresql
+      - ./docker/postgres:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U clinic -d clinic"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+  backend:
+    build: .
+    env_file: server/.env
+    environment:
+      ALLOWED_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+      STAFF_ORIGINS: http://localhost:5174,http://127.0.0.1:5174
+      DATABASE_URL: postgresql+asyncpg://clinic:clinic@db:5432/clinic
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    image: node:22-slim
+    working_dir: /web
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    environment:
+      VITE_WS_URL: ws://localhost:8000/ws
+      VITE_API_URL: http://localhost:8000
+    volumes:
+      - ./web:/web
+      - /web/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+
+  admin:
+    image: node:22-slim
+    working_dir: /admin
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0"
+    environment:
+      VITE_API_URL: http://localhost:8000
+    volumes:
+      - ./admin:/admin
+      - /admin/node_modules
+    ports:
+      - "5174:5174"
+    depends_on:
+      - backend
+
+volumes:
+  pgvector_data:  # new name for the pgvector image; an older "pgdata" volume (postgres:18-alpine) is not reused

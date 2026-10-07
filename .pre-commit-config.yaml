@@ -1,0 +1,22 @@
+# pre-commit install  (runs from the repo root; tools come from the server's uv environment)
+repos:
+  - repo: local
+    hooks:
+      - id: ruff
+        name: ruff check
+        entry: bash -c 'cd server && uv run ruff check . && uv run ruff format --check .'
+        language: system
+        pass_filenames: false
+        files: ^server/
+      - id: mypy
+        name: mypy --strict
+        entry: bash -c 'cd server && uv run mypy'
+        language: system
+        pass_filenames: false
+        files: ^server/
+      - id: import-linter
+        name: import-linter contracts
+        entry: bash -c 'cd server && uv run lint-imports'
+        language: system
+        pass_filenames: false
+        files: ^server/

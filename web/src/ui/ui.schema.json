@@ -1,0 +1,303 @@
+{
+  "$defs": {
+    "AppointmentButtons": {
+      "properties": {
+        "type": {
+          "const": "appointment_buttons",
+          "default": "appointment_buttons",
+          "title": "Type",
+          "type": "string"
+        },
+        "appointments": {
+          "items": {
+            "$ref": "#/$defs/AppointmentChip"
+          },
+          "title": "Appointments",
+          "type": "array"
+        }
+      },
+      "required": ["type", "appointments"],
+      "title": "AppointmentButtons",
+      "type": "object"
+    },
+    "AppointmentChip": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": ["label", "text"],
+      "title": "AppointmentChip",
+      "type": "object"
+    },
+    "ConfirmationCard": {
+      "properties": {
+        "type": {
+          "const": "confirmation_card",
+          "default": "confirmation_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "doctor": {
+          "title": "Doctor",
+          "type": "string"
+        },
+        "specialty": {
+          "title": "Specialty",
+          "type": "string"
+        },
+        "date": {
+          "title": "Date",
+          "type": "string"
+        },
+        "time": {
+          "title": "Time",
+          "type": "string"
+        },
+        "visit_type": {
+          "title": "Visit Type",
+          "type": "string"
+        },
+        "appointment_ref": {
+          "title": "Appointment Ref",
+          "type": "string"
+        }
+      },
+      "required": ["type", "doctor", "specialty", "date", "time", "visit_type", "appointment_ref"],
+      "title": "ConfirmationCard",
+      "type": "object"
+    },
+    "DoctorCard": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "specialty": {
+          "title": "Specialty",
+          "type": "string"
+        },
+        "days": {
+          "title": "Days",
+          "type": "string"
+        },
+        "hours": {
+          "title": "Hours",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": ["name", "specialty", "days", "hours", "text"],
+      "title": "DoctorCard",
+      "type": "object"
+    },
+    "DoctorCards": {
+      "properties": {
+        "type": {
+          "const": "doctor_cards",
+          "default": "doctor_cards",
+          "title": "Type",
+          "type": "string"
+        },
+        "doctors": {
+          "items": {
+            "$ref": "#/$defs/DoctorCard"
+          },
+          "title": "Doctors",
+          "type": "array"
+        }
+      },
+      "required": ["type", "doctors"],
+      "title": "DoctorCards",
+      "type": "object"
+    },
+    "HandoffCard": {
+      "properties": {
+        "type": {
+          "const": "handoff_card",
+          "default": "handoff_card",
+          "title": "Type",
+          "type": "string"
+        },
+        "desk_number": {
+          "title": "Desk Number",
+          "type": "string"
+        },
+        "ticket_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ticket Id"
+        }
+      },
+      "required": ["type", "desk_number"],
+      "title": "HandoffCard",
+      "type": "object"
+    },
+    "Menu": {
+      "description": "Stacked full-width options under the greeting.",
+      "properties": {
+        "type": {
+          "const": "menu",
+          "default": "menu",
+          "title": "Type",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "$ref": "#/$defs/MenuOption"
+          },
+          "maxItems": 4,
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": ["type", "options"],
+      "title": "Menu",
+      "type": "object"
+    },
+    "MenuOption": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": ["label", "text"],
+      "title": "MenuOption",
+      "type": "object"
+    },
+    "QuickReplies": {
+      "properties": {
+        "type": {
+          "const": "quick_replies",
+          "default": "quick_replies",
+          "title": "Type",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 3,
+          "title": "Options",
+          "type": "array"
+        }
+      },
+      "required": ["type", "options"],
+      "title": "QuickReplies",
+      "type": "object"
+    },
+    "SlotButtons": {
+      "properties": {
+        "type": {
+          "const": "slot_buttons",
+          "default": "slot_buttons",
+          "title": "Type",
+          "type": "string"
+        },
+        "groups": {
+          "items": {
+            "$ref": "#/$defs/SlotGroup"
+          },
+          "title": "Groups",
+          "type": "array"
+        }
+      },
+      "required": ["type", "groups"],
+      "title": "SlotButtons",
+      "type": "object"
+    },
+    "SlotChip": {
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": ["label", "text"],
+      "title": "SlotChip",
+      "type": "object"
+    },
+    "SlotGroup": {
+      "properties": {
+        "date_label": {
+          "title": "Date Label",
+          "type": "string"
+        },
+        "doctor": {
+          "title": "Doctor",
+          "type": "string"
+        },
+        "slots": {
+          "items": {
+            "$ref": "#/$defs/SlotChip"
+          },
+          "title": "Slots",
+          "type": "array"
+        }
+      },
+      "required": ["date_label", "doctor", "slots"],
+      "title": "SlotGroup",
+      "type": "object"
+    }
+  },
+  "discriminator": {
+    "mapping": {
+      "appointment_buttons": "#/$defs/AppointmentButtons",
+      "confirmation_card": "#/$defs/ConfirmationCard",
+      "doctor_cards": "#/$defs/DoctorCards",
+      "handoff_card": "#/$defs/HandoffCard",
+      "menu": "#/$defs/Menu",
+      "quick_replies": "#/$defs/QuickReplies",
+      "slot_buttons": "#/$defs/SlotButtons"
+    },
+    "propertyName": "type"
+  },
+  "oneOf": [
+    {
+      "$ref": "#/$defs/QuickReplies"
+    },
+    {
+      "$ref": "#/$defs/Menu"
+    },
+    {
+      "$ref": "#/$defs/DoctorCards"
+    },
+    {
+      "$ref": "#/$defs/SlotButtons"
+    },
+    {
+      "$ref": "#/$defs/AppointmentButtons"
+    },
+    {
+      "$ref": "#/$defs/ConfirmationCard"
+    },
+    {
+      "$ref": "#/$defs/HandoffCard"
+    }
+  ],
+  "title": "UIPayload"
+}

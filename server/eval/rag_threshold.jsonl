@@ -1,0 +1,60 @@
+{"text": "is parking available at the clinic", "kind": "faq", "match": true}
+{"text": "are you open on sunday", "kind": "faq", "match": true}
+{"text": "what are your timings", "kind": "faq", "match": true}
+{"text": "how do I get there from the metro", "kind": "faq", "match": true}
+{"text": "what is the front desk phone number", "kind": "faq", "match": true}
+{"text": "do you have an emergency department", "kind": "faq", "match": true}
+{"text": "how do I register as a new patient", "kind": "faq", "match": true}
+{"text": "what documents should I bring", "kind": "faq", "match": true}
+{"text": "can I pay by UPI", "kind": "faq", "match": true}
+{"text": "what happens if I am late for my appointment", "kind": "faq", "match": true}
+{"text": "how late can I cancel my appointment", "kind": "faq", "match": true}
+{"text": "when do I get the follow-up fee", "kind": "faq", "match": true}
+{"text": "what time is blood sample collection", "kind": "faq", "match": true}
+{"text": "do you have an MRI or X-ray", "kind": "faq", "match": true}
+{"text": "can I get an ECG done", "kind": "faq", "match": true}
+{"text": "is the flu vaccine available", "kind": "faq", "match": true}
+{"text": "can you remove ear wax", "kind": "faq", "match": true}
+{"text": "do you have health check-up packages", "kind": "faq", "match": true}
+{"text": "how do I collect my lab report", "kind": "faq", "match": true}
+{"text": "do you accept Star Health cashless", "kind": "faq", "match": true}
+{"text": "my insurer is not on your list, can I claim reimbursement", "kind": "faq", "match": true}
+{"text": "I have a corporate insurance plan, can I use it", "kind": "faq", "match": true}
+{"text": "do I need to fast before a sugar test", "kind": "faq", "match": true}
+{"text": "how should I prepare for a thyroid test", "kind": "faq", "match": true}
+{"text": "how do I give a urine sample", "kind": "faq", "match": true}
+{"text": "what should I bring for a skin doctor visit", "kind": "faq", "match": true}
+{"text": "can I bring my dog to the clinic", "kind": "faq", "match": false}
+{"text": "do you offer dental implants", "kind": "faq", "match": false}
+{"text": "is there a pharmacy inside the clinic", "kind": "faq", "match": false}
+{"text": "is the clinic wheelchair accessible", "kind": "faq", "match": false}
+{"text": "do you have free wifi", "kind": "faq", "match": false}
+{"text": "is there a cafeteria", "kind": "faq", "match": false}
+{"text": "do you do eye tests for glasses", "kind": "faq", "match": false}
+{"text": "do you offer physiotherapy sessions", "kind": "faq", "match": false}
+{"text": "can a doctor visit me at home", "kind": "faq", "match": false}
+{"text": "do you have video consultations", "kind": "faq", "match": false}
+{"text": "can I donate blood here", "kind": "faq", "match": false}
+{"text": "is there an ATM nearby", "kind": "faq", "match": false}
+{"text": "do you do hair transplants", "kind": "faq", "match": false}
+{"text": "do you have a play area for kids", "kind": "faq", "match": false}
+{"text": "where is the lost and found", "kind": "faq", "match": false}
+{"text": "do you do cosmetic surgery", "kind": "faq", "match": false}
+{"text": "I have a dry cough and a runny nose", "kind": "intake", "match": true}
+{"text": "fever since yesterday with chills", "kind": "intake", "match": true}
+{"text": "my knee hurts when I climb stairs", "kind": "intake", "match": true}
+{"text": "lower back pain after lifting a box", "kind": "intake", "match": true}
+{"text": "itchy red rash on my arm", "kind": "intake", "match": true}
+{"text": "pimples all over my face", "kind": "intake", "match": true}
+{"text": "pain in my right ear with some discharge", "kind": "intake", "match": true}
+{"text": "blocked nose and sore throat", "kind": "intake", "match": true}
+{"text": "my child has a high temperature", "kind": "intake", "match": true}
+{"text": "my shoulder joint is stiff and painful", "kind": "intake", "match": true}
+{"text": "I feel tired all the time", "kind": "intake", "match": false}
+{"text": "I want a general health check-up", "kind": "intake", "match": false}
+{"text": "stomach pain after meals", "kind": "intake", "match": false}
+{"text": "headache for two days", "kind": "intake", "match": false}
+{"text": "I need my blood pressure reviewed", "kind": "intake", "match": false}
+{"text": "irregular periods for three months", "kind": "intake", "match": false}
+{"text": "I can't sleep at night", "kind": "intake", "match": false}
+{"text": "I want to discuss my diabetes reports", "kind": "intake", "match": false}
